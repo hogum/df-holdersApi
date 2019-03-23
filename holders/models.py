@@ -18,10 +18,10 @@ class Meal(models.Model):
         if not self.receipt_id:
             self.receipt_id = self.create_meal_receipt()
 
-        super(Ticket, self).save(*args, **kwargs)
+        super(Meal, self).save(*args, **kwargs)
 
     def __repr__(self):
-        return f'{self.name} - {self.receipt_id}'
+        return "{} - {}".format(self.name, self.receipt_id)
 
     @classmethod
     def create_meal_receipt(cls):
